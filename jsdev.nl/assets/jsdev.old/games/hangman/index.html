@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hangman</title>
+  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light+Two" rel="stylesheet">
+  <style>
+    html, body {
+      background-color:white;
+      font-family: 'Shadows Into Light Two', cursive;
+      font-size: 80px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    h4 {
+      font-family: serif;
+    }
+    .align {
+      float:right;
+    }
+  </style>
+
+</head>
+<body>
+<img class="align" src="../../img/strap.png" />
+<div id="displayWord">
+
+</div>
+  <script>
+    const libary = ["history", "computer", "literature", "theory", "television", "community", "physics", "university", "chemistry", "entertainment", "magazine", "grandmother", "guitar", "tennis", "poetry", "queen", "revolution", "championship", "passenger"];
+    const underscore = "_";
+
+    let wordSelect = libary[Math.floor(Math.random()*libary.length)];
+    let display = underscore.repeat(wordSelect.length);
+
+    console.log(wordSelect);
+
+    document.getElementById("displayWord").textContent = display;
+
+    document.addEventListener("keydown", function(e) {
+      char = String.fromCharCode(e.which).toLowerCase();
+      charIndex = wordSelect.search(String.fromCharCode(e.which).toLowerCase());
+      if (charIndex!=-1) {
+        display.replace(char);
+      } else {
+        return;
+      }
+      console.log(char, charIndex);
+    });
+  </script>
+</body>
+</html>

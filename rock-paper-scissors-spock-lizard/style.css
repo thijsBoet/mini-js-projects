@@ -1,0 +1,31 @@
+.h3{
+    color: white;
+}
+.middle-row {
+    background-color: #15133C;
+}
+.top-row {
+    background-color: #FFAF06;
+}
+.bottom-row {
+    background-color: #FFAF06;
+}
+.icon{
+    border: none;
+    border-radius: 5px;
+    box-shadow: 2px 1px 5px grey;
+    transition: 0.2;
+}
+.icon:hover {
+    border: 1px outset #15133C;
+    border-radius: 5px;
+    box-shadow: none;
+    padding: 3px;
+    transition: 0.1s;
+}
+.icon:active {
+    border: 1px inset #15133C;
+    border-radius: 5px;
+    box-shadow: none;
+    padding: 3px;
+}

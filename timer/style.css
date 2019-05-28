@@ -1,0 +1,16 @@
+#audioToggle{
+  width: 45px;
+  height: 45px;
+}
+
+.audio-toggle {
+  position: absolute;
+  top: 45px;
+  right: 45px;
+  cursor: pointer
+}
+
+input:focus,
+input:focus {
+  outline: none;
+}

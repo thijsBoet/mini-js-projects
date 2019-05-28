@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container d-flex-row">
+
+    <div class="row">
+        <div class="col-3 bg-warning"></div>
+        <div id='stopWatch' class="col-6 display-4 bg-warning text-white text-center">00:00:00</div>
+        <div class="col-3 bg-warning"></div>
+    </div>
+    <div class="row">
+        <div class="col-3 bg-light"></div>
+        <div class="col-6 bg-light justify-content-around">
+            <input id='startBtn' type="button" value="start" name="start" class='btn btn btn-success m-2'>
+
+            <input id='lap' type="button" value="lap" name="lap" class='btn btn btn-info m-2'>
+
+            <input id='stop' type="button" value="stop" name="stop" class='btn btn btn-danger m-2'>
+
+            <input id='reset' type="button" value="reset" name="reset" class='btn btn btn-primary m-2'>
+        </div>
+        <div class="col-3 bg-light"></div>
+    </div>
+</div>
+    
+
+
+<script src="script.js"></script>
+</body>
+</html>

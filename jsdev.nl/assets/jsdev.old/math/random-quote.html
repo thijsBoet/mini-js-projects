@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <title>Random Quote</title>
+    <style>
+      body {
+      	margin:0;
+        margin-top: 10%;
+      	font-family:Droid Serif;
+      	background:#fafafa;
+      	line-height:1.5;
+      	cursor:default;
+      }
+      section {
+      	box-shadow:0 2px 5px rgba(0,0,0,0.2);
+      	background:#fff;
+      	width:60%;
+      	margin:100px auto;
+      	padding:50px;
+      }
+      button {
+        margin:auto;
+        display: block;
+        border-radius: 5px;
+        background-color: #ccc;
+        color: white;
+      }
+
+      blockquote {
+      	text-align:center;
+      	font-size:20px;
+      	border-top:1px solid #ccc;
+      	border-bottom:1px solid #ccc;
+      	position:relative;
+      	quotes: "\201C""\201D""\2018""\2019";
+      }
+      blockquote:after {
+      	color:#ccc;
+      	font-family:Source Sans Pro;
+      	content: open-quote;
+      	font-size:80px;
+      	position:absolute;
+      	left:50%;
+      	bottom:calc(100% - 20px);
+      	background:#fff;
+      	height:55px;
+      	width: 55px;
+      	line-height:normal;
+      	text-align:center;
+      	transform:translateX(-50%);
+      }
+      blockquote p {
+      	padding:20px;
+      }
+    </style>
+  </head>
+<body>
+
+  <blockquote>
+    <p id="blockquote">
+
+    </p>
+    <cite id="cite"></cite>
+  </blockquote>
+  <button id="myBtn" input type="button">Random Quote</button>
+
+  <script>
+
+function randQuote(){
+  const libary = [["Success is most often achieved by those who don't know that failure is inevitable." , "- Coco Chanel -"], ["Things work out best for those who make the best of how things work out.", "- John Wooden -"], ["Courage is grace under pressure.", "- Ernest Hemingway -"], ["If you are not willing to risk the usual, you will have to settle for the ordinary.", "- Jim Rohn -"], ["Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning.", "- Albert Einstein -"] , ["Take up one idea. Make that one idea your life -- think of it, dream of it, live on that idea. Let the brain, muscles, nerves, every part of your body be full of that idea, and just leave every other idea alone. This is the way to success.", "- Swami Vivekananda -"], ["Sometimes you can't see yourself clearly until you see yourself through the eyes of others.", "- Ellen DeGeneres -"], ["All our dreams can come true if we have the courage to pursue them.", "- Walt Disney -"], ["It does not matter how slowly you go, so long as you do not stop.", "- Confucius -"], ["Success is walking from failure to failure with no loss of enthusiasm.", "- Winston Churchill -"], ["Someone is sitting in the shade today because someone planted a tree a long time ago.", "- Warren Buffett -"], ["Whenever you see a successful person, you only see the public glories, never the private sacrifices to reach them.", "- Vaibhav Shah -"], ["Don't cry because it's over, smile because it happened.", "- Dr. Seuss -"], ["Success? I don't know what that word means. I'm happy. But success, that goes back to what in somebody's eyes success means. For me, success is inner peace. That's a good day for me.", "- Denzel Washington -"], ["You only live once, but if you do it right, once is enough.", "- Mae West -"], ["Opportunities don't happen. You create them.", "- Chris Grosser -"], ["Once you choose hope, anything's possible.", "- Christopher Reeve -"], ["Try not to become a person of success, but rather try to become a person of value.", "- Albert Einstein -"], ["There is no easy walk to freedom anywhere, and many of us will have to pass through the valley of the shadow of death again and again before we reach the mountaintop of our desires.", "- Nelson Mandela -"], ["It is not the strongest of the species that survive, nor the most intelligent, but the one most responsive to change.", "- Charles Darwin -"], ["The best and most beautiful things in the world cannot be seen or even touched -- they must be felt with the heart.", "- Helen Keller -"], ["Great minds discuss ideas; average minds discuss events; small minds discuss people.", "- Eleanor Roosevelt -"], ["Live as if you were to die tomorrow. Learn as if you were to live forever.", "- Mahatma Gandhi -"], ["The best revenge is massive success.", "- Frank Sinatra -"], ["The difference between winning and losing is most often not quitting.", "- Walt Disney -"], ["I have not failed. I've just found 10,000 ways that won't work.", "- Thomas Edison -"], ["When you cease to dream you cease to live.", "- Malcolm Forbes -"], ["A successful man is one who can lay a firm foundation with the bricks others have thrown at him.", "- David Brinkley -"], ["May you live every day of your life.", "- Jonathan Swift -"], ["No one can make you feel inferior without your consent.", "- Eleanor Roosevelt -"], ["Failure is another steppingstone to greatness.", "- Oprah Winfrey -"], ["The whole secret of a successful life is to find out what is one's destiny to do, and then do it.", "- Henry Ford -"], ["If you're not stubborn, you'll give up on experiments too soon. And if you're not flexible, you'll pound your head against the wall and you won't see a different solution to a problem you're trying to solve.", "- Jeff Bezos -"], ["If you're going through hell, keep going.", "- Winston Churchill -"], ["In order to be irreplaceable one must always be different.", "- Coco Chanel -"], ["What seems to us as bitter trials are often blessings in disguise.", "- Oscar Wilde -"]];
+
+  let quoteSelect = libary[Math.floor(Math.random()*libary.length)];
+
+  document.getElementById("blockquote").textContent = quoteSelect[0];
+  document.getElementById("cite").textContent = quoteSelect[1];
+}
+document.getElementById("myBtn").addEventListener("click", randQuote);    
+  </script>
+</body>
+</html>

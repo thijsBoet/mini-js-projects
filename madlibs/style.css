@@ -1,0 +1,15 @@
+#heading {
+    font-family: 'Ultra', serif;
+}
+
+#sentence {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+hr {
+    background-color: #ffc107
+}
+
+span {
+    content: "\263A";
+}

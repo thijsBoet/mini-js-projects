@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="card">
+        <div class="card-set">
+            Science Officer
+        </div>
+        <div class="card-img">
+            <img src="./img/spock.jpg" class="img"  width="350px" height="327px" alt="spock">
+        </div>
+        <div class="card-title">
+            Spock
+        </div>
+    </div>
+
+
+<script type="text/javascript">
+'use strict';
+
+let player = [];
+let computer = [];
+
+// create array with card objects
+let cards = [
+    [{set: "federation captain", card: "picard", image: "./img/picard.jpg"}],
+    [{set: "federation captain", card: "kirk", image: "./img/kirk.jpg"}],
+    [{set: "federation captain", card: "janeway", image: "./img/janeway.jpg"}],
+    [{set: "federation captain", card: "archer", image: "./img/archer.jpg"}],
+    
+    [{set: "science officer", card: "spock", image: "./img/spock.jpg"}],
+    [{set: "science officer", card: "decker", image: "./img/decker.jpg"}],
+    [{set: "science officer", card: "burnham", image: "./img/burnham.jpg"}],
+    [{set: "science officer", card: "stamets", image: "./img/stamets.jpg"}],
+];
+
+let random = () => Math.ceil(Math.random() * cards.length);
+
+const draw = (opponent) => {
+        const drawn = cards[random()];
+        opponent.push(drawn);
+        cards.splice(cards.indexOf(drawn),1);
+        console.log(cards.length)
+}
+
+const shareMaps = (numCards) => {
+    for(let i=1 ; i<=numCards; i++) {
+        draw(player);
+        draw(computer);
+    }
+}
+
+shareMaps(2);
+
+
+// randomly draw cards
+// remove cards from array
+
+// push cards among players
+
+// check for full quartet
+
+// 
+
+</script>
+</body>
+</html>
