@@ -1,43 +1,25 @@
 'use strict';
 
-let score=0;
+const submitQuizBtn = document.getElementById("submitQuizBtn");
+const displayScore = document.getElementById('score');
 
-function checkQuiz(){
-    if (document.getElementById('1d').checked = true) {
-        score++;
-    }
-    if (document.getElementById('2d').checked = true) {
-        score++;
-    }
-    if (document.getElementById('3c').checked = true) {
-        score++;
-    }
-    if (document.getElementById('4b').checked = true) {
-        score++;
-    }
-    if (document.getElementById('5c').checked = true) {
-        score++;
-    }
-    if (document.getElementById('6a').checked = true) {
-        score++;
-    }
-    if (document.getElementById('7c').checked = true) {
-        score++;
-    }
-    if (document.getElementById('8a').checked = true) {
-        score++;
-    }
-    if (document.getElementById('9b').checked = true) {
-        score++;
-    }
-    if (document.getElementById('10a').checked = true) {
-        score++;
-    }
-    let parent = document.getElementById('parent');
-    var child = document.getElementById("submitQuizBtn");
-    parent.removeChild(child);
+let score = 0;
 
-    document.getElementById('score').textContent = `You scored ${score}/10`;
-}
-document.getElementById('submitQuizBtn').addEventListener('click', checkQuiz, false);
+submitQuizBtn.addEventListener('click', function(e){
 
+    if (document.getElementById('1d').checked === true)  score++;
+    if (document.getElementById('2d').checked === true)  score++;
+    if (document.getElementById('3c').checked === true)  score++;
+    if (document.getElementById('4b').checked === true)  score++;
+    if (document.getElementById('5c').checked === true)  score++;
+    if (document.getElementById('6a').checked === true)  score++;
+    if (document.getElementById('7c').checked === true)  score++;
+    if (document.getElementById('8a').checked === true)  score++;
+    if (document.getElementById('9b').checked === true)  score++;
+    if (document.getElementById('10a').checked === true) score++;
+
+    displayScore.textContent = `You scored ${score}/10`;
+    score = 0;
+
+    e.preventDefault();
+});
