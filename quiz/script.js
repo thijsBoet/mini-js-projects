@@ -23,3 +23,7 @@ submitQuizBtn.addEventListener('click', function(e){
 
     e.preventDefault();
 });
+
+function giveColor($answer, $e) {
+    this.clasList.add('correct');
+}
