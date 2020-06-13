@@ -10,6 +10,10 @@ btns.forEach((btn) => {
     if(styles.contains('decrease')) count--;
     if(styles.contains('reset')) count = 0;
     if(styles.contains('increase')) count++;
+
+    if(count > 0) value.style.color = 'green';
+    if(count < 0) value.style.color = 'red';
+    if(count === 0) value.style.color = '#222';
     value.textContent = count;
   })
 });
