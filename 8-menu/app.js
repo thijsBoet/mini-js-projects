@@ -71,32 +71,24 @@ const menu = [
     img: "./images/item-9.jpeg",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
+  {
+    id: 10,
+    title: "steak dinner",
+    category: "dinner",
+    price: 39.99,
+    img: "./images/item-10.jpeg",
+    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+  },
 ];
 
 const sectionCenter = document.querySelector('.section-center');
-const filterBtns = document.querySelectorAll('.filter-btn');
+const btnContainer = document.querySelector('.btn-container');
 
 // load items
 window.addEventListener('DOMContentLoaded', () => {
   displayMenuItems(menu);
+  displayMenuButtons();  
 });
-// filter items
-filterBtns.forEach((btn)=> {
-  btn.addEventListener('click', (e) => {
-    const category = e.currentTarget.dataset.id;
-    const menuCategory = menu.filter((menuItem) => {
-      if(menuItem.category === category){
-        return menuItem;
-      }
-    });
-    if (category === 'all') {
-      displayMenuItems(menu);
-    } else {
-      displayMenuItems(menuCategory);
-    }
-  });
-});
-
 
 function displayMenuItems(menuItems) {
   let displayMenu = menuItems.map((item) => {
@@ -113,4 +105,37 @@ function displayMenuItems(menuItems) {
   });
   displayMenu = displayMenu.join('');
   sectionCenter.innerHTML = displayMenu;
+}
+
+function displayMenuButtons() {
+  const categories = menu.reduce((values, item) => {
+    if (!values.includes(item.category)) {
+      values.push(item.category)
+    }
+    return values
+  }, ['all']);
+  const categoryBtns = categories.map((category) =>{
+    return `<button class="filter-btn" type="button" data-id="${category}">
+              ${category}
+            </button>`
+  }).join('');
+  btnContainer.innerHTML = categoryBtns;
+
+  // filter items
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  filterBtns.forEach((btn)=> {
+    btn.addEventListener('click', (e) => {
+      const category = e.currentTarget.dataset.id;
+      const menuCategory = menu.filter((menuItem) => {
+        if(menuItem.category === category){
+          return menuItem;
+        }
+      });
+      if (category === 'all') {
+        displayMenuItems(menu);
+      } else {
+        displayMenuItems(menuCategory);
+      }
+    });
+  });
 }
