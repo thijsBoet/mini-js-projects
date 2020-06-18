@@ -26,7 +26,12 @@ const giveaway = document.querySelector('.giveaway');
 const deadline = document.querySelector('.deadline');
 const items = document.querySelectorAll('.deadline-format h4');
 
-let futureDate = new Date(2021, 11, 25, 17, 30, 0);
+let tempDate = new Date();
+let tempYear = tempDate.getFullYear();
+let tempMonth = tempDate.getMonth();
+let tempDay = tempDate.getDate();
+
+let futureDate = new Date(tempYear, tempMonth, tempDay +10, 18, 30, 0);
 
 const year = futureDate.getFullYear();
 const month = months[futureDate.getMonth()];
@@ -53,7 +58,7 @@ function getRemainingTime(){
   const oneMinute = 60000 // = 60 * 1000
 
   // calc all time values
-  let days = Math.floor(t/oneDay);
+  let days = Math.floor(t / oneDay);
   let hours = Math.floor((t % oneDay ) / oneHour);
   let minutes = Math.floor((t % oneHour ) / oneMinute);
   let seconds = Math.floor((t % oneMinute ) / 1000);
