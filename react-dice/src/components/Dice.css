@@ -1,0 +1,16 @@
+.react-icons {
+  font-size: 120px;
+  color: rgb(46, 60, 255);
+  display: block;
+  transition: transform 0.3s ease-in;
+}
+
+.react-icons:hover {
+  color: rgb(23, 35, 204);
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.react-icons:active {
+  transform: scale(1);
+}
